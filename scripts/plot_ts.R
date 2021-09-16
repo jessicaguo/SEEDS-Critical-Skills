@@ -1,9 +1,11 @@
 #Manual data
-d<-read.csv("wp.csv")
+d <- read.csv("wp.csv")
 str(d)
 
 library(dplyr)
-SE<-function(x){sd(x,na.rm=T)/sqrt(length(x))}
+SE <- function(x){
+  sd(x, na.rm = TRUE)/sqrt(length(x))
+  }
 sum_WP<-d%>%
   mutate(datetime=as.POSIXct(strptime(datetime, "%m/%d/%Y %H:%M")),
          date=as.POSIXct(paste0(date," 00:00"), format="%m/%d/%Y %H:%M"))%>%
