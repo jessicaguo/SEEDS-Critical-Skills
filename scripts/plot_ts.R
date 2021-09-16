@@ -1,4 +1,7 @@
-#Manual data
+# Purpose to compare manual and automated data methods.
+# Created by Jessica Guo and Kristina Riemer. 
+
+####Manual data####
 d<-read.csv("wp.csv")
 str(d)
 
@@ -11,7 +14,7 @@ sum_WP<-d%>%
   summarize(m=mean(negWP,na.rm=T),se=SE(negWP),sd=sd(negWP))
 
 
-#Automated data
+####Automated data####
 load("../psychrometer_append/clean3/new_1b_3.r")
 str(new_d1)
 
