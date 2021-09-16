@@ -1,3 +1,6 @@
+# Purpose: to compare manual and automated data methods. 
+# Created by Jessica Guo and Kristina Riemer. 
+
 #Manual data
 d<-read.csv("wp.csv")
 str(d)
