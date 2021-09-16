@@ -1,3 +1,5 @@
+# Compare manual and automated data methods 
+
 #Manual data
 d<-read.csv("wp.csv")
 str(d)
