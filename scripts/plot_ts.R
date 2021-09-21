@@ -1,15 +1,15 @@
 # Code for practicing style and best practices
-# By Riemer and Guo, modified by López Lloreda
+# By Riemer and Guo, modified by López Lloreda # Apparently it doesn't like accents?
 # 9/16/2021
+
+## Finish fixing according to styling guide
 
 
 # Load libraries
 library(ggplot2)
 library(dplyr)
 
-#### Read in data ####
-
-# Manual data
+# Read in manual data
 d <- read.csv("wp.csv")
 
 # Look at the structure of the data
@@ -28,9 +28,10 @@ sum_WP <- d %>%
   summarize(m=mean(negWP,na.rm=T),se=SE(negWP),sd=sd(negWP))
 
 
-# Automated data
+# Load in automated data
 load("../psychrometer_append/clean3/new_1b_3.r")
 
+# Look at the structure of this data
 str(new_d1)
 
 #### Create plots ####
