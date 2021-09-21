@@ -2,12 +2,12 @@
 # By Riemer and Guo, modified by López Lloreda # Apparently it doesn't like accents?
 # 9/16/2021
 
-## Finish fixing according to styling guide
-
-
 # Load libraries
 library(ggplot2)
 library(dplyr)
+
+
+#### Loading and looking at the data ####
 
 # Read in manual data
 d <- read.csv("wp.csv")
@@ -18,15 +18,14 @@ str(d)
 # Create functions
 
 SE <- function(x){
-        sd(x,na.rm=T)/sqrt(length(x))
+        sd(x,na.rm=TRUE)/sqrt(length(x))
 }
 
 sum_WP <- d %>%
   mutate(datetime=as.POSIXct(strptime(datetime, "%m/%d/%Y %H:%M")),
          date=as.POSIXct(paste0(date," 00:00"), format="%m/%d/%Y %H:%M"))%>%
   group_by(date) %>%
-  summarize(m=mean(negWP,na.rm=T),se=SE(negWP),sd=sd(negWP))
-
+  summarize(m=mean(negWP,na.rm=TRUE),se=SE(negWP),sd=sd(negWP))
 
 # Load in automated data
 load("../psychrometer_append/clean3/new_1b_3.r")
