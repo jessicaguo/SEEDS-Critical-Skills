@@ -5,3 +5,6 @@
 
 # R project file
 *.Rproj
+
+# suppress intermediate data
+data_clean/
