@@ -42,7 +42,7 @@ surveys %>%
   group_by(sex, species_id) %>% 
   summarize(mean_weight = mean(weight, na.rm = TRUE),
             sd_weight = sd(weight, na.rm = TRUE),
-            n = n()) >%>
+            n = n()) %>%
   arrange(desc(mean_weight))
          
 # Counting, count(), n()
