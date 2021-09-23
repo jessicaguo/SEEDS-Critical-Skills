@@ -16,8 +16,6 @@ str(surveys)
 dim(surveys)
 nrow(surveys); ncol(surveys)
 
-# read_csv IS NOT WORKING- figure out what's going on
-
 # Subsetting by rows (filter) and columns (select)
 filter(surveys, year == 1995)
 select(surveys, month, species, genus)
