@@ -9,6 +9,7 @@ library(udunits2) # unit conversions
 # Read in data
 # Using read_csv is 1) faster and 2) reads strings as factors
 surveys <- read.csv("data_raw/portal_data_joined.csv")
+surveys <- read_csv("data_raw/portal_data_joined.csv")
 head(surveys)
 View(surveys)
 str(surveys)
