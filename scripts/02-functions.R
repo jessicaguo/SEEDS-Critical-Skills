@@ -29,7 +29,7 @@ calc_shrub_vol(shrub_measurements$lengths[1],
                shrub_measurements$height[1])
 
 calc_shrub_vol <- function(length, width, height =1) { # if one of your variables is constant, you can give it a value
-  area <- length * width # BUT NOTE that there's no object called area
+  area <- length * width # BUT NOTE that there's no object called area (it doesn't go into your environment)
   volume <- area * height
   return(volume) 
 }
