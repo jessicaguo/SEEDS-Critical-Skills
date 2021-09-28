@@ -23,4 +23,3 @@ fig1<-ggplot()+
   geom_point(data=sum_WP, aes(x=date, y=m), stat="identity", size=3, col="red")+
   geom_errorbar(data=sum_WP, aes(x=date, ymin=m-sd, ymax=m+sd), stat="identity",width=5)
 fig1
-

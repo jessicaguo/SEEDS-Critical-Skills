@@ -5,3 +5,6 @@
 
 # R project files 
 SEEDS-Critical-Skills.Rproj
+
+# supress intermediate data
+data_clean/
