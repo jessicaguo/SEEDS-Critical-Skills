@@ -11,3 +11,12 @@ SEED_notes
 #Not reading folder intermediates / represents folder
 
 data_clean/
+
+#new 
+
+locations.zip
+locations-2016-01-01.txt
+locations-2016-01-02.txt
+locations-2016-01-03.txt
+locations-2016-01-04.txt
+locations-2016-01-05.txt
