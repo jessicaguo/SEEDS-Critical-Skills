@@ -2,7 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+*.txt
+*.zip
 
 *.Rproj
 
 data_clean/
+
