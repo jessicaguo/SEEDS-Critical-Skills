@@ -25,4 +25,11 @@ Finally, sign up for a GitHub account ([github.com](https://github.com/)) if you
 | 9/28/2021 | Reproduce | [Control Flow](https://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html) | Jessica |
 | 9/30/2021 | Publish | [Producing Reports](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/index.html)  | Kristina |
 
+### Project files 
+
+* data_raw folder 
+  *portal_data_joined.csv: example data from portal project 
+*scripts folder
+  * 01-data-manipulation.R introduction to dplyr 
+* plots folder 
 
