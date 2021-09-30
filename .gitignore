@@ -6,3 +6,6 @@
 
 # suppress intermediate data
 data_clean/
+
+# suppres jpegs
+*.jpg
