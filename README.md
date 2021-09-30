@@ -31,7 +31,7 @@ Finally, sign up for a GitHub account ([github.com](https://github.com/)) if you
   * `portal_data_joined.csv`: example data from [Portal project] (https://portal.weecology.org/)
   
 * `scripts` folder
-  * 01-data-manipulation.R introduction to dplyr 
+  * `01-data-manipulation.R` introduction to dplyr 
   
 * `plots` folder 
 
