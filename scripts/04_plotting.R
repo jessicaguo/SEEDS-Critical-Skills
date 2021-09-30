@@ -51,15 +51,68 @@ ggplot(data = surveys_complete,
 #### combining plots with for loops ####
 
 # weight - hindfoot_length correlation for each species
-species <- species_counts$species_id #create a new vector with the number of species
+sp <- species_counts$species_id #create a new vector with the number of species
 #for(i in 1:nrow(species_counts)) {#use nrow instead of length because species is a data frame not a vector
 
-for(i in 1:length(species)) { 
+for(i in 1:nrow(species_counts)) { 
   sub <- surveys_complete %>% #subset the data
-    filter(species_id == species[i])
-  
-  ggplot(data = surveys_complete,
-         mapping = aes(x = weight, y = hindfoot_length)) + #aes can be located in geom
+    filter(species_id == sp[i])
+  fig <- ggplot(data = sub,
+                mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1)
+  ggsave(filename = paste0("Plots/", sp[i],"_length_weight_scatter.jpg"),
+         fig,
+         height = 4,
+         width = 4,
+         units = "in")
 }
 
+#### Time series plots ####
+surveys_complete %>%
+  filter(species_id == "DM") %>%
+  group_by(year) %>%
+  summarise(mean_weight = mean(weight),
+            sd_weight = sd(weight)) %>%
+  ggplot(aes(x = year, y = mean_weight)) +  #no need to specify the data because everything from pipe will get in
+  geom_pointrange(aes(ymin = mean_weight - sd_weight, #add error bars vs geom_point
+                      ymax = mean_weight + sd_weight))
+
+surveys_complete %>%
+  filter(species_id == "DM") %>%
+  group_by(year) %>%
+  summarise(mean_weight = mean(weight),
+            sd_weight = sd(weight)) %>%
+  ggplot(aes(x = year, y = mean_weight)) +
+  geom_point()
+
+## Challenge 
+surveys_complete %>%
+  filter(genus == "Dipodomys") %>%
+  group_by(year,sex, species_id) %>%
+  summarise(mean_weight = mean(weight),
+            sd_weight = sd(weight)) %>%
+  ggplot(aes(x = year, y = mean_weight, color = sex)) +  #no need to specify the data because everything from pipe will get in
+  geom_pointrange(aes(ymin = mean_weight - sd_weight, #add error bars vs geom_point
+                      ymax = mean_weight + sd_weight))
+
+surveys_complete %>%
+  filter(genus == "Dipodomys") %>%
+  group_by(year,sex, species_id) %>%
+  summarise(mean_weight = mean(weight),
+            sd_weight = sd(weight)) %>%
+  ggplot(aes(x = year, y = mean_weight, color = sex)) +  #no need to specify the data because everything from pipe will get in
+  geom_pointrange(aes(ymin = mean_weight - sd_weight, #add error bars vs geom_point
+                      ymax = mean_weight + sd_weight)) +
+  facet_wrap(vars(species_id), scales = "free_y", nrow = 3)
+
+surveys_complete %>%
+  filter(genus == "Dipodomys") %>%
+  group_by(year, species_id, sex) %>%
+  summarize(mean_weight = mean(weight),
+            sd_weight = sd(weight)) %>%
+  ggplot(aes(x = year, y = mean_weight, color = sex)) +
+  geom_pointrange(aes(ymin = mean_weight - sd_weight,
+                      ymax = mean_weight + sd_weight)) +
+  facet_grid(rows = vars(species_id), 
+             cols = vars(sex),
+             scales = "free_y")
