@@ -27,9 +27,11 @@ Finally, sign up for a GitHub account ([github.com](https://github.com/)) if you
 
 ### Project files 
 
-* data_raw folder 
-  *portal_data_joined.csv: example data from portal project 
-*scripts folder
+* 'data_raw' folder
+  * 'portal_data_joined.csv': example data from [Portal project] (https://portal.weecology.org/)
+  
+* 'scripts' folder
   * 01-data-manipulation.R introduction to dplyr 
-* plots folder 
+  
+* 'plots' folder 
 
