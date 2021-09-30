@@ -8,3 +8,5 @@ SEEDS-Critical-Skills.Rproj
 
 # supress intermediate data
 data_clean/
+
+plots/
